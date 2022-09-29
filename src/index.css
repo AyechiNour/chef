@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@700&family=Jim+Nightshade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Battambang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+@import "react-alice-carousel/lib/alice-carousel.css";
+
+:root {
+    --orange-color: #F28705;
+    --yellow-color: #FFE8A1;
+    --font-jim: 'Jim Nightshade', cursive;
+    --font-hind: 'Hind Vadodara', sans-serif;
+    --font-carattere: 'Carattere', cursive;
+    --font-capriola: 'Capriola', sans-serif;
+    --font-battam: 'Battambang', cursive;
+    --font-comforta: 'Comfortaa', cursive;
+
+}
+
+.font-jim {
+    font-family: var(--font-jim);
+}
+
+.font-hind {
+    font-family: var(--font-hind);
+}
+
+.font-caratere {
+    font-family: var(--font-carattere);
+}
+
+.font-capriola {
+    font-family: var(--font-capriola);
+}
+
+.font-battam {
+    font-family: var(--font-battam);
+}
+
+.font-comforta {
+    font-family: var(--font-comforta);
+}
+
+.bg-orange {
+    background-color: var(--orange-color);
+}
+
+.bg-yellow {
+    background-color: var(--yellow-color);
+}
+
+.bg-im {
+    background-image: url("../public/images/bgMenu.png");
+    background-size: cover;
+}
+
+.active {
+    color: var(--orange-color);
+    border-bottom: solid;
+}
+
+.text-orange {
+    color: var(--orange-color);
+}
+
+.alice-carousel {
+    width: 80% !important;
+}
+
+.top {
+    top: calc(100% /2 - 1.5rem);
+}
+
+.left {
+    left: calc(-10%);
+}
+
+.right {
+    right: calc(-10%);
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+@media screen and (min-width: 640px) {
+    .gmap_iframe {
+        height: calc(25rem);
+    }
+
+    .mapouter {
+        position: relative;
+        text-align: right;
+        width: 100%;
+        height: calc(25rem);
+    }
+
+    .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        width: 100%;
+        height: calc(25rem);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .gmap_iframe {
+        height: calc(15rem);
+    }
+
+    .mapouter {
+        position: relative;
+        text-align: right;
+        width: 100%;
+        height: calc(15rem);
+    }
+
+    .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        width: 100%;
+        height: calc(15rem);
+    }
+}
+
+.bg-offer {
+    background-image: url("../public/images/bgOffer.png");
+    background-size: cover;
+}
