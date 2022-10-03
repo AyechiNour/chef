@@ -8,7 +8,7 @@ import Caroussel from '../Caroussel';
 const Architecture = () => {
     const title = {
         part1: "Our",
-        part2: "Offers"
+        part2: "Architecture"
     }
     const archiInfo = [
         {

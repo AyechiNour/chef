@@ -1,13 +1,34 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import Title from '../Title';
 import { Pagination } from './Pagination';
-import PlatCard from './PlatCard';
 
 const Plats = () => {
     const title = {
         part1: "Our",
         part2: "Menu"
     }
+
+    const [nbItem, setnbItem] = useState(1);
+
+    useEffect(() => {
+        if (window.innerWidth < 640) {
+            setnbItem(4)
+            console.log("nbitem", nbItem)
+        } else if (window.innerWidth < 768) {
+            setnbItem(6)
+            console.log("nbitem", nbItem)
+        } else if (window.innerWidth < 1024) {
+            setnbItem(9)
+            console.log("nbitem", nbItem)
+        } else if (window.innerWidth < 1280) {
+            setnbItem(12)
+            console.log("nbitem", nbItem)
+        } else {
+            setnbItem(15)
+        }
+
+    }, [nbItem])
+
     return (
         <div style={{ backgroundColor: "#F2F2F2" }}>
             <Title title={title} />
@@ -34,7 +55,7 @@ const Plats = () => {
                         <span className='p-4 col-span-2 hidden md:block'>Healthy Food</span>
                     </button>
                 </div>
-                <Pagination itemsPerPage={4} />
+                <Pagination itemsPerPage={nbItem} />
             </div>
         </div>
     );

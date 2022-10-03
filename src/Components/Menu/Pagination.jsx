@@ -1,12 +1,63 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
 import PlatCard from './PlatCard';
 
 // Example items, to simulate fetching from another resources.
-
 const infoCards = [
     {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },
+    {
+        name: "nour"
+    },{
         name: "nour"
     },
     {
@@ -35,8 +86,8 @@ const infoCards = [
     }
 ]
 
-const items = infoCards.map((data)=>{
-    return(
+const items = infoCards.map((data) => {
+    return (
         <PlatCard />
     )
 })
@@ -61,7 +112,6 @@ export function Pagination({ itemsPerPage }) {
     // Here we use item offsets; we could also use page offsets
     // following the API or data you're working with.
     const [itemOffset, setItemOffset] = useState(0);
-
     useEffect(() => {
         // Fetch items from another resources.
         const endOffset = itemOffset + itemsPerPage;
@@ -69,7 +119,6 @@ export function Pagination({ itemsPerPage }) {
         setCurrentItems(items.slice(itemOffset, endOffset));
         setPageCount(Math.ceil(items.length / itemsPerPage));
     }, [itemOffset, itemsPerPage]);
-
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % items.length;
@@ -81,15 +130,22 @@ export function Pagination({ itemsPerPage }) {
 
     return (
         <div className='mt-4'>
-            <Items currentItems={currentItems} />
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-items-center'>
+                <Items currentItems={currentItems} />
+            </div>
             <ReactPaginate
-                breakLabel="..."
-                nextLabel="next >"
+                breakLabel=""
+                nextLabel="hhhh"
                 onPageChange={handlePageClick}
-                pageRangeDisplayed={5}
                 pageCount={pageCount}
-                previousLabel="< previous"
+                previousLabel="hhhh"
                 renderOnZeroPageCount={null}
+                pageClassName="numberPage"
+                containerClassName="pageContainer"
+                previousClassName="previousBoutton"
+                nextClassName="nextBoutton"
+                activeClassName="activePage"
+                forcePage={1}
             />
         </div>
     );

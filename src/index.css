@@ -10,7 +10,7 @@
 @import "react-alice-carousel/lib/alice-carousel.css";
 
 :root {
-    --orange-color: #F28705;
+    --orange-color: #f28705;
     --yellow-color: #FFE8A1;
     --font-jim: 'Jim Nightshade', cursive;
     --font-hind: 'Hind Vadodara', sans-serif;
@@ -138,4 +138,87 @@ textarea {
 .bg-offer {
     background-image: url("../public/images/bgOffer.png");
     background-size: cover;
+}
+
+.numberPage {
+    display: none;
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.previousBoutton {
+    position: absolute;
+    left: 0;
+    -moz-user-select: none;
+    /* Firefox */
+    -webkit-user-select: none;
+    /* Chrome, Safari, Opéra depuis la version 15 */
+    -ms-user-select: none;
+    /* Internet explorer depuis la version 10 et Edge */
+    user-select: none;
+    /* Propriété standard */
+    color: rgba(255, 255, 255, 0);
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-content: center;
+    border: solid #000000;
+    border-width: 1.5px;
+    background-image: url("../public/images/previousBoutton.png");
+    background-size: cover;
+}
+
+.nextBoutton {
+    position: absolute;
+    right: 0;
+    -moz-user-select: none;
+    /* Firefox */
+    -webkit-user-select: none;
+    /* Chrome, Safari, Opéra depuis la version 15 */
+    -ms-user-select: none;
+    /* Internet explorer depuis la version 10 et Edge */
+    user-select: none;
+    /* Propriété standard */
+    color: rgb(255, 255, 255, 0);
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-content: center;
+    border: solid #000000;
+    border-width: 1.5px;
+    background-image: url("../public/images/nextBoutton.png");
+    background-size: cover;
+}
+
+.activePage {
+    border: solid #00000092;
+    border-width: 1.5px;
+    display: block;
+    -moz-user-select: none;
+    /* Firefox */
+    -webkit-user-select: none;
+    /* Chrome, Safari, Opéra depuis la version 15 */
+    -ms-user-select: none;
+    /* Internet explorer depuis la version 10 et Edge */
+    user-select: none;
+    /* Propriété standard */
+    color: rgb(0, 0, 0);
+    height: 30px;
+    padding: 2px;
+    display: grid;
+    place-content: center;
+    border: solid #000000;
+    border-width: 1.5px;
+    margin-left: 4px;
+    margin-right: 4px;
 }
