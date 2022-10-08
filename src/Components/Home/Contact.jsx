@@ -16,7 +16,7 @@ export default function Contact() {
             <img className='w-2/3' src="/images/map.png" alt="" srcset="" />
           </div>
         </ScaleAnimation>
-          <div className='order-1 md:order-2 flex flex-col justify-center items-center'>
+        <div className='order-1 md:order-2 flex flex-col justify-center items-center mt-10 md:mt-0'>
           <ScaleAnimation>
             <span className='font-battam text-lg md:text-2xl py-2'>We'd love to hear from you</span>
             <div>
@@ -33,8 +33,8 @@ export default function Contact() {
                 <span className='font-battam text-lg md:text-2xl px-3'>email.email@gmail.com</span>
               </div>
             </div>
-            </ScaleAnimation>
-          </div>
+          </ScaleAnimation>
+        </div>
       </div>
 
     </div>

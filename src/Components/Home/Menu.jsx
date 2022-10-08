@@ -6,6 +6,7 @@ import Dish from '../Dish'
 import LeftBouttonWhite from '../LeftBouttonWhite'
 import RightBouttonWhite from '../RightBouttonWhite'
 import Title from '../Title'
+import { useSelector} from 'react-redux'
 
 export default function Menu() {
     const title = {
@@ -13,37 +14,9 @@ export default function Menu() {
         part2: "Menu",
         color: "#FFFFFF"
     }
-    const dishesInfo = [
-        {
-            name: "Indian Curry",
-            price: "75",
-            imgPath: "/images/dish1.png"
-        },
-        {
-            name: "Rougail Saucisse",
-            price: "57",
-            imgPath: "/images/dish2.png"
-        },
-        {
-            name: "Oeuf Cocotte",
-            price: "30",
-            imgPath: "/images/dish3.png"
-        },
-        {
-            name: "Indian Curry",
-            price: "75",
-            imgPath: "/images/dish1.png"
-        }, {
-            name: "Rougail Saucisse",
-            price: "57",
-            imgPath: "/images/dish2.png"
-        }, {
-            name: "Oeuf Cocotte",
-            price: "30",
-            imgPath: "/images/dish3.png"
-        }
-    ]
-    const dishes = dishesInfo.map((dish) => {
+    const dishesInfo = useSelector((state) => state.plats.platInfo)
+    const dishesInfoTri = [...dishesInfo]
+    const dishes = dishesInfoTri.sort((a, b) => a.rate < b.rate ? 1 : -1).slice(0, 11).map((dish) => {
         return (
             <Dish dish={dish} bgColor="#FFFFFF" textColor="#000000" />
         )

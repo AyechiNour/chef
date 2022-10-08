@@ -12,8 +12,8 @@ const Gallery = () => {
     return (
         <div>
             {apparence &&
-                <div className='fixed z-40 overflow-hidden top-0 left-0 flex justify-center items-center w-screen h-screen' style={{ backgroundColor: "#000000d2" }}>
-                    <img onClick={() => { setapparence(false);document.body.style.overflow = "visible" }} className='z-40 absolute right-7 top-14 z-40 w-10 h-10 cursor-pointer' src="/images/croix.png" alt="" srcset="" />
+                <div className='fixed z-50 overflow-hidden top-0 left-0 flex justify-center items-center w-screen h-screen' style={{ backgroundColor: "#000000d2" }}>
+                    <img onClick={() => { setapparence(false);document.body.style.overflow = "visible" }} className='z-40 absolute right-7 top-7 w-10 h-10 cursor-pointer' src="/images/croix.png" alt="" srcset="" />
                     <div className='h-full w-full absolute top-0 left-0 bg-white z-30' style={{ backgroundColor: "#00000092" }}></div>
                     <img className='lg:h-4/5 z-30 relative top-6' src={img} alt="" srcset="" />
                 </div>

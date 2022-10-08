@@ -4,49 +4,17 @@ import Dish from '../Dish'
 import RightBouttonBlack from '../RightBouttonBlack';
 import LeftBouttonBlack from '../LeftBouttonBlack';
 import Caroussel from '../Caroussel';
+import { useSelector} from 'react-redux'
 
 const BestSeller = () => {
     const title = {
         part1: "Best",
         part2: "Seller"
     }
-    const bestSellerInfo = [
-        {
-            name: "Indian Curry",
-            price: "75",
-            imgPath: "/images/dish1.png",
-            rate: 5
-        },
-        {
-            name: "Rougail Saucisse",
-            price: "57",
-            imgPath: "/images/dish2.png",
-            rate: 4
-        },
-        {
-            name: "Oeuf Cocotte",
-            price: "30",
-            imgPath: "/images/dish3.png",
-            rate: 4
-        },
-        {
-            name: "Indian Curry",
-            price: "75",
-            imgPath: "/images/dish1.png",
-            rate: 3
-        }, {
-            name: "Rougail Saucisse",
-            price: "57",
-            imgPath: "/images/dish2.png",
-            rate: 2
-        }, {
-            name: "Oeuf Cocotte",
-            price: "30",
-            imgPath: "/images/dish3.png",
-            rate: 1
-        }
-    ]
-    const bestSellers = bestSellerInfo.map((data) => {
+    const bestSellerInfo = useSelector((state) => state.plats.platInfo)
+    const bestSellerInfoTri = [...bestSellerInfo]
+    const bestSellers = bestSellerInfoTri.sort((a, b) => a.rate < b.rate ? 1 : -1)
+    .slice(0, 11).map((data) => {
         return (
             <Dish dish={data} bgColor="#151515" textColor="#FFFFFF" />
         )

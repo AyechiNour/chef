@@ -1,0 +1,26 @@
+{
+    "booking" : "Book A Table",
+    "navbarItem1":"Home",
+    "navbarItem2":"About",
+    "navbarItem3":"Chefs",
+    "navbarItem4":"Menu",
+    "navbarItem5":"Contact",
+
+    "headerButton":"See More",
+    "headerTitleHome":"Fast and Tasty",
+    "headerParagraphHome":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cum placeat laboriosam aut ipsa provident accusantium non fugiat, animi impedit!",
+    "headerTitleAbout":"Fast and Tasty",
+    "headerParagraphAbout":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cum placeat laboriosam aut ipsa provident accusantium non fugiat, animi impedit!",
+    "headerTitleChef":"Creative and Hardworking",
+    "headerParagraphChef":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cum placeat laboriosam aut ipsa provident accusantium non fugiat, animi impedit!",
+    "headerTitleMenu":"Delicious and Healthy",
+    "headerParagraphMenu":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cum placeat laboriosam aut ipsa provident accusantium non fugiat, animi impedit!",
+    "headerTitleContact":"Always On Call",
+    "headerParagraphContact":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cum placeat laboriosam aut ipsa provident accusantium non fugiat, animi impedit!"
+
+
+
+
+
+    
+}

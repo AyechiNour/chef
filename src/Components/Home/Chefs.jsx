@@ -3,27 +3,17 @@ import Boutton from '../Boutton'
 import Title from '../Title'
 import Chef from '../Chef'
 import { NavLink } from 'react-router-dom'
+import { useSelector} from 'react-redux'
 
 export default function Chefs() {
     const title = {
         part1: "Best",
         part2: "Chefs"
     }
-    const chefInfo = [
-        {
-            name: "Gordon Ramsay",
-            imgpath: "/images/PhotoChef1.png"
-        },
-        {
-            name: "Jamie Oliver",
-            imgpath: "/images/PhotoChef2.png"
-        },
-        {
-            name: "Michael Caines",
-            imgpath: "/images/PhotoChef3.png"
-        }
-    ]
-    const chefs = chefInfo.map((data) => {
+
+    const chefInfo = useSelector((state) => state.chefs.chefsInfo)
+    const chefInfoTri = [...chefInfo]
+    const chefs = chefInfoTri.sort((a, b) => a.rate < b.rate ? 1 : -1).slice(0, 3).map((data) => {
         return (
             <Chef chef={data} />
         )

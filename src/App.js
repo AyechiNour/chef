@@ -6,21 +6,25 @@ import Menu from "./Pages/Menu"
 import Contact from "./Pages/Contact"
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import { Provider } from "react-redux";
+import Store from "./Store/Store";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Navbar />
-        z<Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Chefs" element={<Chefs />} />
-          <Route path="/Menu" element={<Menu />} />
-          <Route path="/Contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <Provider store={Store}>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Chefs" element={<Chefs />} />
+            <Route path="/Menu" element={<Menu />} />
+            <Route path="/Contact" element={<Contact />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </Provider>
     </div>
   );
 }

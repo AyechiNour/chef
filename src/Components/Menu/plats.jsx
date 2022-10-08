@@ -1,6 +1,8 @@
 import { React, useState, useEffect } from 'react';
 import Title from '../Title';
 import { Pagination } from './Pagination';
+import { useDispatch } from 'react-redux'
+import { setType } from '../../Features/filerSlice'
 
 const Plats = () => {
     const title = {
@@ -28,7 +30,7 @@ const Plats = () => {
         }
 
     }, [nbItem])
-
+    const dispatch = useDispatch(setType())
     return (
         <div style={{ backgroundColor: "#F2F2F2" }}>
             <Title title={title} />

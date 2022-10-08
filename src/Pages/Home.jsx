@@ -5,13 +5,16 @@ import Menu from '../Components/Home/Menu'
 import Story from '../Components/Story'
 import Welcome from '../Components/Home/Welcome'
 import Contact from '../Components/Home/Contact'
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const [t, i18n] = useTranslation()
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])  
   const headerInfo={
-    title:"Fast and Tasty",
+    title:t('headerTitleHome'),
+    paragrah:t('headerParagraphHome'),
     imgPath:"/images/HeaderImHome.png"
   }
   return (

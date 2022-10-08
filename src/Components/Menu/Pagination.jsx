@@ -1,96 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import PlatCard from './PlatCard';
+import { useSelector } from 'react-redux'
 
 // Example items, to simulate fetching from another resources.
-const infoCards = [
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },{
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    },
-    {
-        name: "nour"
-    }
-]
-
-const items = infoCards.map((data) => {
-    return (
-        <PlatCard />
-    )
-})
 
 function Items({ currentItems }) {
     return (
@@ -106,6 +19,14 @@ function Items({ currentItems }) {
 }
 
 export function Pagination({ itemsPerPage }) {
+    const filterItem = useSelector((state) => state.filter.type)
+    const InfoCards = useSelector((state) => state.plats.platInfo)
+    const items = InfoCards.filter(item => item.type === filterItem).map((data) => {
+        return (
+            <PlatCard plat={data} />
+        )
+    })
+    
     // We start with an empty list of items.
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);

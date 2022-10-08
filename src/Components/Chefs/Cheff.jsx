@@ -4,44 +4,16 @@ import Chef from '../Chef';
 import LeftBouttonBlack from '../LeftBouttonBlack';
 import RightBouttonBlack from '../RightBouttonBlack';
 import Title from '../Title';
+import { useSelector } from 'react-redux'
 
 const Cheff = () => {
     const title = {
         part1: "Our",
         part2: "Chefs"
     }
-    const chefsInfo = [
-        {
-            name: "Gordon Ramsay",
-            imgpath: "/images/PhotoChef1.png",
-            rate: 4
-        },
-        {
-            name: "Jamie Oliver",
-            imgpath: "/images/PhotoChef2.png",
-            rate: 5
-        },
-        {
-            name: "Michael Caines",
-            imgpath: "/images/PhotoChef3.png",
-            rate: 4
-        },
-        {
-            name: "Gordon Ramsay",
-            imgpath: "/images/PhotoChef1.png",
-            rate: 1
-        },
-        {
-            name: "Jamie Oliver",
-            imgpath: "/images/PhotoChef2.png",
-            rate: 2
-        },
-        {
-            name: "Michael Caines",
-            imgpath: "/images/PhotoChef3.png",
-            rate: 3
-        }
-    ]
+
+    const chefsInfo = useSelector((state) => state.chefs.chefsInfo)
+
     const chefs = chefsInfo.map((data) => {
         return (
             <Chef chef={data} />

@@ -201,9 +201,8 @@ textarea {
 }
 
 .activePage {
-    border: solid #00000092;
-    border-width: 1.5px;
     display: block;
+    background-color: #ffffff;
     -moz-user-select: none;
     /* Firefox */
     -webkit-user-select: none;
@@ -212,13 +211,41 @@ textarea {
     /* Internet explorer depuis la version 10 et Edge */
     user-select: none;
     /* Propriété standard */
-    color: rgb(0, 0, 0);
-    height: 30px;
-    padding: 2px;
+    width: 40px;
+    height: 40px;
     display: grid;
     place-content: center;
     border: solid #000000;
     border-width: 1.5px;
-    margin-left: 4px;
-    margin-right: 4px;
+    font-weight: 600;
+}
+
+.animate {
+    animation: preloaderAnimation 1s ease-in-out;
+}
+
+@keyframes preloaderAnimation {
+    0%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.animation {
+    animation: Animation 1s ease-in-out;
+}
+
+@keyframes Animation {
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }
