@@ -3,17 +3,21 @@ import Boutton from '../Boutton'
 import Title from '../Title'
 import Chef from '../Chef'
 import { NavLink } from 'react-router-dom'
-import { useSelector} from 'react-redux'
+import { useDispatch, useSelector} from 'react-redux'
+import { topThreeChef } from '../../Features/chefSlice'
+import { useEffect } from 'react'
 
 export default function Chefs() {
     const title = {
         part1: "Best",
         part2: "Chefs"
     }
-
-    const chefInfo = useSelector((state) => state.chefs.chefsInfo)
-    const chefInfoTri = [...chefInfo]
-    const chefs = chefInfoTri.sort((a, b) => a.rate < b.rate ? 1 : -1).slice(0, 3).map((data) => {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(topThreeChef())
+    }, [dispatch]);
+    const chefInfo = useSelector((state) => state.chefs.topThreeChefs)
+    const chefs = chefInfo.map((data) => {
         return (
             <Chef chef={data} />
         )

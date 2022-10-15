@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import PlatCard from './PlatCard';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { filterPlat,setItemOffset } from '../../Features/platSlice';
 
 // Example items, to simulate fetching from another resources.
-
 function Items({ currentItems }) {
     return (
         <>
@@ -19,40 +19,54 @@ function Items({ currentItems }) {
 }
 
 export function Pagination({ itemsPerPage }) {
-    const filterItem = useSelector((state) => state.filter.type)
-    const InfoCards = useSelector((state) => state.plats.platInfo)
-    const items = InfoCards.filter(item => item.type === filterItem).map((data) => {
-        return (
-            <PlatCard plat={data} />
-        )
-    })
-    
+    const dispatch = useDispatch()
+    const option = useSelector((state) => state.plats.filterOption)
+    const platFilter = useSelector((state) => state.plats.filterPlat);
+    const itemOffset = useSelector((state) => state.plats.itemOffset);
+    useEffect(() => {
+        console.log("le filtre from pagination pour", option, "est", platFilter)
+        dispatch(filterPlat())
+    }, [dispatch, option]);
+
     // We start with an empty list of items.
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
     // Here we use item offsets; we could also use page offsets
     // following the API or data you're working with.
-    const [itemOffset, setItemOffset] = useState(0);
+    const [endOffset, setendOffset] = useState(0);
     useEffect(() => {
-        // Fetch items from another resources.
-        const endOffset = itemOffset + itemsPerPage;
+        // Fetch items from another resources.    
+        setendOffset(itemOffset + itemsPerPage)
         console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-        setCurrentItems(items.slice(itemOffset, endOffset));
-        setPageCount(Math.ceil(items.length / itemsPerPage));
-    }, [itemOffset, itemsPerPage]);
+        setCurrentItems(platFilter.map((data) => {
+            return (
+                <PlatCard plat={data} />
+            )
+        }).slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(platFilter.map((data) => {
+            return (
+                <PlatCard plat={data} />
+            )
+        }).length / itemsPerPage));
+    }, [itemOffset, itemsPerPage, dispatch, option,platFilter,endOffset]);
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
-        const newOffset = (event.selected * itemsPerPage) % items.length;
-        console.log(
-            `User requested page number ${event.selected}, which is offset ${newOffset}`
-        );
-        setItemOffset(newOffset);
+        const newOffset = (event.selected * itemsPerPage) % platFilter.map((data) => {
+            return (
+                <PlatCard plat={data} />
+            )
+        }).length;
+        dispatch(setItemOffset(newOffset));
     };
 
     return (
         <div className='mt-4'>
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-items-center'>
-                <Items currentItems={currentItems} />
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-items-center pb-5'>
+                <Items currentItems={platFilter.map((data) => {
+                    return (
+                        <PlatCard plat={data} />
+                    )
+                }).slice(itemOffset, endOffset)} />
             </div>
             <ReactPaginate
                 breakLabel=""
@@ -66,7 +80,7 @@ export function Pagination({ itemsPerPage }) {
                 previousClassName="previousBoutton"
                 nextClassName="nextBoutton"
                 activeClassName="activePage"
-                forcePage={1}
+                forcePage={0}
             />
         </div>
     );

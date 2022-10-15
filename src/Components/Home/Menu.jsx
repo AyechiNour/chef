@@ -6,17 +6,22 @@ import Dish from '../Dish'
 import LeftBouttonWhite from '../LeftBouttonWhite'
 import RightBouttonWhite from '../RightBouttonWhite'
 import Title from '../Title'
-import { useSelector} from 'react-redux'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { topTenPlats } from '../../Features/platSlice'
 export default function Menu() {
     const title = {
         part1: "Our",
         part2: "Menu",
         color: "#FFFFFF"
     }
-    const dishesInfo = useSelector((state) => state.plats.platInfo)
-    const dishesInfoTri = [...dishesInfo]
-    const dishes = dishesInfoTri.sort((a, b) => a.rate < b.rate ? 1 : -1).slice(0, 11).map((dish) => {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(topTenPlats())
+    }, [dispatch]);
+    const platInfo = useSelector((state) => state.plats.topTenPlat)
+    console.log( useSelector((state) => state.plats.topTenPlat))
+    const dishes = platInfo.map((dish) => {
         return (
             <Dish dish={dish} bgColor="#FFFFFF" textColor="#000000" />
         )
@@ -39,7 +44,7 @@ export default function Menu() {
         <div className="realtive bg-im mt-8 pb-8" >
             <Title title={title} />
             <div className='mt-4'>
-                <Caroussel items={dishes} responsive={responsive} rightBouttom={<RightBouttonWhite/>} leftBouttom={<LeftBouttonWhite/>} />
+                <Caroussel items={dishes} responsive={responsive} rightBouttom={<RightBouttonWhite />} leftBouttom={<LeftBouttonWhite />} />
             </div>
             <NavLink className='flex justify-center items-center' to="/Menu">
                 <Boutton bgColor="#FFFFFF" textColor="#000000" flecheIm="/images/fleche_black.png" />

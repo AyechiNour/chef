@@ -32,14 +32,19 @@ const initialState = {
             imgpath: "/images/PhotoChef3.png",
             rate: 3
         }
-    ]
+    ],
+    topThreeChefs : [],
 }
 
 export const chefSlice = createSlice({
     name: "chefs",
     initialState,
-    reducers: {}
+    reducers: {
+        topThreeChef:(state)=>{
+            state.topThreeChefs = state.chefsInfo.sort((a, b) => a.rate < b.rate ? 1 : -1).slice(0, 3)
+        }
+    }
 })
 
-export const { topChefsTri } = chefSlice.actions
+export const { topThreeChef } = chefSlice.actions
 export default chefSlice.reducer
