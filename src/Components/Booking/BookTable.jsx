@@ -12,7 +12,7 @@ export default function BookTable() {
     const [animation, setanimation] = useState(true);
 
     return (
-        <div className={animation?'animation overflow-hidden fixed top-0 left-0 w-screen h-screen bg-white z-50 pt-10':'fixed overflow-hidden top-0 left-0 w-screen h-screen bg-white z-50 pt-10 animate'}>
+        <div className={animation?'animation  md:overflow-hidden overflow-y-scroll fixed top-0 left-0 w-screen h-screen bg-white z-50 pt-10':'fixed overflow-hidden top-0 left-0 w-screen h-screen bg-white z-50 pt-10 animate'}>
             <svg className='absolute z-10 -top-24' width={window.screen.width} height={window.screen.height*1.25} viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_f_452_14)">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M1184.58 10.5661C1281.27 13.3652 1393.13 16.3443 1425.65 88.9312C1461.68 169.343 1403.42 254.518 1318.5 309.493C1215.21 376.363 1081.77 437.384 973.101 381.903C848.453 318.264 790.97 183.225 854.094 72.3851C906.444 -19.5387 1060.63 6.97791 1184.58 10.5661Z" fill="#FFC988" />
