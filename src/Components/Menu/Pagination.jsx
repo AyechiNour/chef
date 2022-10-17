@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import PlatCard from './PlatCard';
 import { useDispatch, useSelector } from 'react-redux'
-import { filterPlat,setItemOffset } from '../../Features/platSlice';
+import { filterPlat, setItemOffset } from '../../Features/platSlice';
 
 // Example items, to simulate fetching from another resources.
 function Items({ currentItems }) {
@@ -17,17 +17,14 @@ function Items({ currentItems }) {
         </>
     );
 }
-
 export function Pagination({ itemsPerPage }) {
     const dispatch = useDispatch()
     const option = useSelector((state) => state.plats.filterOption)
     const platFilter = useSelector((state) => state.plats.filterPlat);
     const itemOffset = useSelector((state) => state.plats.itemOffset);
     useEffect(() => {
-        console.log("le filtre from pagination pour", option, "est", platFilter)
         dispatch(filterPlat())
     }, [dispatch, option]);
-
     // We start with an empty list of items.
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
@@ -37,7 +34,6 @@ export function Pagination({ itemsPerPage }) {
     useEffect(() => {
         // Fetch items from another resources.    
         setendOffset(itemOffset + itemsPerPage)
-        console.log(`Loading items from ${itemOffset} to ${endOffset}`);
         setCurrentItems(platFilter.map((data) => {
             return (
                 <PlatCard plat={data} />
@@ -48,7 +44,7 @@ export function Pagination({ itemsPerPage }) {
                 <PlatCard plat={data} />
             )
         }).length / itemsPerPage));
-    }, [itemOffset, itemsPerPage, dispatch, option,platFilter,endOffset]);
+    }, [itemOffset, itemsPerPage, dispatch, option, platFilter, endOffset]);
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % platFilter.map((data) => {
@@ -58,7 +54,6 @@ export function Pagination({ itemsPerPage }) {
         }).length;
         dispatch(setItemOffset(newOffset));
     };
-
     return (
         <div className='mt-4'>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-items-center pb-5'>
@@ -70,10 +65,10 @@ export function Pagination({ itemsPerPage }) {
             </div>
             <ReactPaginate
                 breakLabel=""
-                nextLabel="hhhh"
+                nextLabel="_____"
                 onPageChange={handlePageClick}
                 pageCount={pageCount}
-                previousLabel="hhhh"
+                previousLabel="_____"
                 renderOnZeroPageCount={null}
                 pageClassName="numberPage"
                 containerClassName="pageContainer"

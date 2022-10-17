@@ -11,16 +11,16 @@ export default function Menu() {
     window.scrollTo(0, 0)
   }, [])
   const headerInfo = {
-    title:t('headerTitleMenu'),
-    paragrah:t('headerParagraphMenu'),
+    title: t('headerTitleMenu'),
+    paragrah: t('headerParagraphMenu'),
     imgPath: "/images/HeaderImMenu.png"
   }
   return (
-    <div>
+    <main>
       <Header headerInfo={headerInfo} />
       <BestSeller />
       <BestOffer />
       <Plats />
-    </div>
+    </main>
   )
 }

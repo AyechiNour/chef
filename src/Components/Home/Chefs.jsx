@@ -3,7 +3,7 @@ import Boutton from '../Boutton'
 import Title from '../Title'
 import Chef from '../Chef'
 import { NavLink } from 'react-router-dom'
-import { useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { topThreeChef } from '../../Features/chefSlice'
 import { useEffect } from 'react'
 

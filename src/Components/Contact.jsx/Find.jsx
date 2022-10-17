@@ -23,5 +23,4 @@ const Find = () => {
         </div>
     );
 }
-
 export default Find;

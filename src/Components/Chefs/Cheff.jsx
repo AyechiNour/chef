@@ -5,15 +5,12 @@ import LeftBouttonBlack from '../LeftBouttonBlack';
 import RightBouttonBlack from '../RightBouttonBlack';
 import Title from '../Title';
 import { useSelector } from 'react-redux'
-
 const Cheff = () => {
     const title = {
         part1: "Our",
         part2: "Chefs"
     }
-
     const chefsInfo = useSelector((state) => state.chefs.chefsInfo)
-
     const chefs = chefsInfo.map((data) => {
         return (
             <Chef chef={data} />

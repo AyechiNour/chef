@@ -30,11 +30,11 @@ export default function Offer() {
         )
     })
     return (
-        <div>
+        <section>
             <Title title={title} />
             <div className='grid grid-cols-1 sm:grid-cols-3 pt-4'>
                 {offers}
             </div>
-        </div>
+        </section>
     )
 }

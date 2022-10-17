@@ -11,20 +11,20 @@ export default function Home() {
   const [t, i18n] = useTranslation()
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])  
-  const headerInfo={
-    title:t('headerTitleHome'),
-    paragrah:t('headerParagraphHome'),
-    imgPath:"/images/HeaderImHome.png"
+  }, [])
+  const headerInfo = {
+    title: t('headerTitleHome'),
+    paragrah: t('headerParagraphHome'),
+    imgPath: "/images/HeaderImHome.png"
   }
   return (
-    <div className='overflow-x-hidden'>
+    <main className='overflow-x-hidden'>
       <Header headerInfo={headerInfo} />
       <Welcome />
       <Story />
       <Chefs />
       <Menu />
       <Contact />
-    </div>
+    </main>
   )
 }

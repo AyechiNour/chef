@@ -605,10 +605,9 @@ const initialState = {
     topTenPlat: [],
     filterPlat: [],
     filterOption: "all",
-    itemOffset:0,
-    pageCount:0,
+    itemOffset: 0,
+    pageCount: 0,
 }
-
 export const platSlice = createSlice({
     name: "plat",
     initialState,
@@ -626,12 +625,11 @@ export const platSlice = createSlice({
                 state.filterPlat = state.platInfo.filter(plat => plat.type === state.filterOption)
             }
         },
-        setItemOffset: (state,action) => {
+        setItemOffset: (state, action) => {
             state.itemOffset = action.payload
         },
-        setPageCount : (state) => {}
+        setPageCount: (state) => { }
     }
 })
-
 export default platSlice.reducer
-export const { topTenPlats, filterVar, filterPlat , setItemOffset} = platSlice.actions
+export const { topTenPlats, filterVar, filterPlat, setItemOffset } = platSlice.actions

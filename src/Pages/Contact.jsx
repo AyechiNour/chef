@@ -8,17 +8,17 @@ export default function Contact() {
   const [t, i18n] = useTranslation()
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])  
-  const headerInfo={
-    title:t('headerTitleContact'),
-    paragrah:t('headerParagraphContact'),
-    imgPath:"/images/HeaderImContact.png"
+  }, [])
+  const headerInfo = {
+    title: t('headerTitleContact'),
+    paragrah: t('headerParagraphContact'),
+    imgPath: "/images/HeaderImContact.png"
   }
   return (
-    <div>
+    <main>
       <Header headerInfo={headerInfo} />
       <ContactInfo />
       <Find />
-    </div>
+    </main>
   )
 }

@@ -18,25 +18,24 @@ export default function Contact() {
         </ScaleAnimation>
         <div className='order-1 md:order-2 flex flex-col justify-center items-center mt-10 md:mt-0'>
           <ScaleAnimation>
-            <span className='font-battam text-lg md:text-2xl py-2'>We'd love to hear from you</span>
+            <span className='font-battam font-bold text-sm md:text-base py-2'>We'd love to hear from you</span>
             <div>
               <div className='flex flex-row items-center py-2'>
-                <img className='w-7 md:w-10 w-7 md:h-10' src="/images/localisation.png" alt="" srcset="" />
-                <span className='font-battam text-lg md:text-2xl px-3'>Rue allée de la Garance</span>
+                <img className='w-5 md:w-8 w-5 md:h-8' src="/images/localisation.png" alt="" srcset="" />
+                <span className='font-battam font-bold text-sm md:text-base px-3'>Rue allée de la Garance</span>
               </div>
               <div className='flex flex-row items-center py-2'>
-                <img className='w-7 md:w-10 w-7 md:h-10' src="/images/tel.png" alt="" srcset="" />
-                <span className='font-battam text-lg md:text-2xl px-3'>+216 29 155 148</span>
+                <img className='w-5 md:w-8 w-5 md:h-8' src="/images/tel.png" alt="" srcset="" />
+                <span className='font-battam font-bold text-sm md:text-base px-3'>+216 29 155 148</span>
               </div>
               <div className='flex flex-row items-center py-2'>
-                <img className='w-7 md:w-10 w-7 md:h-10' src="/images/mail.png" alt="" srcset="" />
-                <span className='font-battam text-lg md:text-2xl px-3'>email.email@gmail.com</span>
+                <img className='w-5 md:w-8 w-5 md:h-8' src="/images/mail.png" alt="" srcset="" />
+                <span className='font-battam font-bold text-sm md:text-base px-3'>email.email@gmail.com</span>
               </div>
             </div>
           </ScaleAnimation>
         </div>
       </div>
-
     </div>
   )
 }

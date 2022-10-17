@@ -9,6 +9,7 @@ import Title from '../Title'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { topTenPlats } from '../../Features/platSlice'
+
 export default function Menu() {
     const title = {
         part1: "Our",
@@ -20,7 +21,6 @@ export default function Menu() {
         dispatch(topTenPlats())
     }, [dispatch]);
     const platInfo = useSelector((state) => state.plats.topTenPlat)
-    console.log( useSelector((state) => state.plats.topTenPlat))
     const dishes = platInfo.map((dish) => {
         return (
             <Dish dish={dish} bgColor="#FFFFFF" textColor="#000000" />

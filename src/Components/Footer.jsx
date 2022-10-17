@@ -1,13 +1,20 @@
 import React from 'react'
-import { motion ,useInView } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { useRef } from 'react'
+import { setboolFooter } from '../Features/bookingSlice';
+import { useDispatch, useSelector } from 'react-redux'
+import BookTable from './Booking/BookTable';
 
 export default function Footer() {
   const footer = useRef(null)
   const isInView = useInView(footer, { once: true });
-
+  const booking = useSelector((state) => state.booking.boolFooter);
+  const dispatch = useDispatch()
   return (
     <footer className='flex flex-col pt-5'>
+      {booking &&
+        <BookTable />
+      }
       <motion.div
         ref={footer}
         style={{
@@ -21,11 +28,11 @@ export default function Footer() {
           <span className='px-2 font-jim text-xl sm:text-2xl lg:text-3xl font-normal'>The Chef</span>
         </div>
         <div className='flex flex-col justify-center items-center relative top-5 mb-8'>
-          <h1 className='uppercase bg-orange py-2 w-24 sm:w-32 text-center rounded-xl text-white font-bold text-xs md:text-sm cursor-pointer'>book a table</h1>
-          <span className='font-battam text-base sm:text-xl lg:text-2xl px-3 py-2'>Open seven days a week</span>
+          <button onClick={() => { dispatch(setboolFooter()) }} className='uppercase bg-orange py-2 w-24 sm:w-32 text-center rounded-xl text-white font-bold text-xs md:text-sm cursor-pointer'>book a table</button>
+          <span className='font-battam font-bold text-sm md:text-base px-3 py-2'>Open seven days a week</span>
         </div>
         <div className='flex flex-col-reverse md:flex-col justify-center items-center'>
-          <span className='font-battam text-base sm:text-xl lg:text-2xl px-3 py-2'>Stay Connected</span>
+          <span className='font-battam font-bold text-sm md:text-base px-3 py-2'>Stay Connected</span>
           <div className='flex flex-row'>
             <img className='w-10 h-10 cursor-pointer' src="/images/facebook.png" alt="" srcset="" />
             <img className='w-10 h-10 cursor-pointer' src="/images/insta.png" alt="" srcset="" />

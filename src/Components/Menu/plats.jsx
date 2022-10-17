@@ -2,16 +2,14 @@ import { React, useState, useEffect } from 'react';
 import Title from '../Title';
 import { Pagination } from './Pagination';
 import { useDispatch } from 'react-redux'
-import { filterVar,setItemOffset } from '../../Features/platSlice';
+import { filterVar, setItemOffset } from '../../Features/platSlice';
 
 const Plats = () => {
     const title = {
         part1: "Our",
         part2: "Menu"
     }
-
     const [nbItem, setnbItem] = useState(1);
-
     useEffect(() => {
         if (window.innerWidth < 640) {
             setnbItem(4)
@@ -35,27 +33,27 @@ const Plats = () => {
             <Title title={title} />
             <div className='px-3 md:px-5 lg:px-7 mt-1 lg:mt-3'>
                 <div className='grid grid-cols-6 bg-white font-comforta font-bold text-xs lg:text-base'>
-                    <button onClick={() => { dispatch(filterVar("all"));dispatch(setItemOffset(0)) }} className='grid grid-cols-3 items-center border-2 border-black p-1 lg:p-2'>
+                    <button onClick={() => { dispatch(filterVar("all")); dispatch(setItemOffset(0)) }} className='grid grid-cols-3 items-center border-2 border-black p-1 lg:p-2'>
                         <img className='justify-self-center w-5 md:w-8 lg:w-12 h-5 md:h-8 lg:h-12 col-span-3 md:col-span-1' src="/images/allFood.png" alt="" srcset="" />
                         <span className='p-4 col-span-2 hidden md:block'>All</span>
                     </button>
-                    <button onClick={() => { dispatch(filterVar("fast food"));dispatch(setItemOffset(0)) }} className='grid grid-cols-3 items-center border-y-2 border-black p-1 lg:p-2'>
+                    <button onClick={() => { dispatch(filterVar("fast food")); dispatch(setItemOffset(0)) }} className='grid grid-cols-3 items-center border-y-2 border-black p-1 lg:p-2'>
                         <img className='justify-self-center w-5 md:w-8 lg:w-12 h-5 md:h-8 lg:h-12 col-span-3 md:col-span-1' src="/images/FastFood.png" alt="" srcset="" />
                         <span className='p-4 col-span-2 hidden md:block'>Fast Food</span>
                     </button>
-                    <button onClick={() => { dispatch(filterVar("breakfast"));dispatch(setItemOffset(0)) }} className='grid grid-cols-3 items-center border-2 border-black p-1 lg:p-2'>
+                    <button onClick={() => { dispatch(filterVar("breakfast")); dispatch(setItemOffset(0)) }} className='grid grid-cols-3 items-center border-2 border-black p-1 lg:p-2'>
                         <img className='justify-self-center w-5 md:w-8 lg:w-12 h-5 md:h-8 lg:h-12 col-span-3 md:col-span-1' src="/images/breakfast.png" alt="" srcset="" />
                         <span className='p-4 col-span-2 hidden md:block truncate'>Breakfast</span>
                     </button>
-                    <button onClick={() => { dispatch(filterVar("dish"));dispatch(setItemOffset(0)) }} className='grid grid-cols-3 items-center border-y-2 border-r-2 border-black p-1 lg:p-2'>
+                    <button onClick={() => { dispatch(filterVar("dish")); dispatch(setItemOffset(0)) }} className='grid grid-cols-3 items-center border-y-2 border-r-2 border-black p-1 lg:p-2'>
                         <img className='justify-self-center w-5 md:w-8 lg:w-12 h-5 md:h-8 lg:h-12 col-span-3 md:col-span-1' src="/images/Dish.png" alt="" srcset="" />
                         <span className='p-4 col-span-2 hidden md:block'>Dish</span>
                     </button>
-                    <button onClick={() => { dispatch(filterVar("drink"));dispatch(setItemOffset(0)) }} className='grid grid-cols-3 items-center border-y-2 border-black p-1 lg:p-2'>
+                    <button onClick={() => { dispatch(filterVar("drink")); dispatch(setItemOffset(0)) }} className='grid grid-cols-3 items-center border-y-2 border-black p-1 lg:p-2'>
                         <img className='justify-self-center w-5 md:w-8 lg:w-12 h-5 md:h-8 lg:h-12 col-span-3 md:col-span-1' src="/images/Drink.png" alt="" srcset="" />
                         <span className='p-4 col-span-2 hidden md:block'>Drinks</span>
                     </button>
-                    <button onClick={() => { dispatch(filterVar("healthy food"));dispatch(setItemOffset(0)) }} className='grid grid-cols-3 items-center border-2 border-black p-1 lg:p-2'>
+                    <button onClick={() => { dispatch(filterVar("healthy food")); dispatch(setItemOffset(0)) }} className='grid grid-cols-3 items-center border-2 border-black p-1 lg:p-2'>
                         <img className='justify-self-center w-5 md:w-8 lg:w-12 h-5 md:h-8 lg:h-12 col-span-3 md:col-span-1' src="/images/HealthyFood.png" alt="" srcset="" />
                         <span className='p-4 col-span-2 hidden md:block'>Healthy Food</span>
                     </button>

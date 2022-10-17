@@ -78,5 +78,4 @@ const ContactInfo = () => {
         </div>
     );
 }
-
 export default ContactInfo;

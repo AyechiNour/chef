@@ -8,20 +8,20 @@ import { useTranslation } from "react-i18next";
 export default function Chefs() {
   const [t, i18n] = useTranslation()
   useEffect
-  (() => {
-    window.scrollTo(0, 0)
-  }, [])  
+    (() => {
+      window.scrollTo(0, 0)
+    }, [])
   const headerInfo = {
-    title:t('headerTitleChef'),
-    paragrah:t('headerParagraphChef'),
+    title: t('headerTitleChef'),
+    paragrah: t('headerParagraphChef'),
     imgPath: "/images/HeaderImChefs.png"
   }
   return (
-    <div>
+    <main>
       <Header headerInfo={headerInfo} />
       <Team />
       <Cheff />
       <Gallery />
-    </div>
+    </main>
   )
 }

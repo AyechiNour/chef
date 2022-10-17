@@ -13,7 +13,6 @@ const BestOffer = () => {
     const img = useRef(null)
     const isInView1 = useInView(offre, { once: true });
     const isInView2 = useInView(img, { once: true });
-
     return (
         <div className='bg-offer'>
             <Title title={title} />
@@ -49,5 +48,4 @@ const BestOffer = () => {
         </div>
     );
 }
-
 export default BestOffer;

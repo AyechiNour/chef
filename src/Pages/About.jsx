@@ -10,19 +10,19 @@ export default function About() {
   const [t, i18n] = useTranslation()
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])  
-  const headerInfo={
-    title:t('headerTitleAbout'),
-    paragrah:t('headerParagraphAbout'),
-    imgPath:"/images/HeaderImAbout.png"
+  }, [])
+  const headerInfo = {
+    title: t('headerTitleAbout'),
+    paragrah: t('headerParagraphAbout'),
+    imgPath: "/images/HeaderImAbout.png"
   }
   return (
-    <div>
+    <main>
       <Header headerInfo={headerInfo} />
       <Offer />
       <Story />
       <Architecture />
       <Gallery />
-    </div>
+    </main>
   )
 }

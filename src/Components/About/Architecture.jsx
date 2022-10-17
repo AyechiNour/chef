@@ -13,11 +13,23 @@ const Architecture = () => {
     const archiInfo = [
         {
             imgPath: "/images/restobar.png",
-            place: "Bar Restaurant"
+            place: "Restaurant"
         },
         {
-            imgPath: "/images/restobar.png",
-            place: "Bar Restaurant"
+            imgPath: "/images/archi1.jpg",
+            place: "Restaurant"
+        },
+        {
+            imgPath: "/images/archi2.jpg",
+            place: "Restaurant"
+        },
+        {
+            imgPath: "/images/archi3.jpg",
+            place: "Restaurant"
+        },
+        {
+            imgPath: "/images/archi4.jpg",
+            place: "Restaurant"
         }
     ]
     const architecture = archiInfo.map((data) => {
@@ -31,13 +43,12 @@ const Architecture = () => {
         }
     }
     return (
-        <div>
+        <section>
             <Title title={title} />
             <div className='mt-4'>
                 <Caroussel items={architecture} responsive={responsive} rightBouttom={<RightBouttonBlack />} leftBouttom={<LeftBouttonBlack />} />
             </div>
-        </div>
+        </section>
     );
 }
-
 export default Architecture;

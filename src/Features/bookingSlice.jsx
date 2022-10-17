@@ -1,18 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    bool: false,
+    boolNavbar: false,
+    boolFooter: false,
 }
-
 export const bookingSlice = createSlice({
     name: "booking",
     initialState,
     reducers: {
-        setbool : (state) => {
-            state.bool = !state.bool
+        setboolNavbar: (state) => {
+            state.boolNavbar = !state.boolNavbar
+        },
+        setboolFooter: (state) => {
+            state.boolFooter = !state.boolFooter
         }
     }
 })
-
 export default bookingSlice.reducer
-export const { setbool } = bookingSlice.actions
+export const { setboolNavbar, setboolFooter } = bookingSlice.actions

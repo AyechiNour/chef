@@ -7,8 +7,7 @@ const Store = configureStore({
     reducer: {
         chefs: chefreducer,
         plats: platreducer,
-        booking : bookingreducer,
+        booking: bookingreducer,
     }
 })
-
 export default Store;

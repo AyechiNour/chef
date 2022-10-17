@@ -19,13 +19,13 @@ export default function Header({ headerInfo }) {
           animate={{ y: 0 }}
           transition={{ duration: 1 }}
           className='font-capriola md:w-3/5 text-center py-4 py-4 lg:py-8 z-10 text-white text-xs px-2 md:px-0 lg:text-base'>{headerInfo.paragrah}</motion.p>
-        <motion.div
+        <motion.button
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 1 }}
           className='cursor-pointer font-capriola py-1 mb-20 sm:mb-12 md:mb-10 md:py-2 px-3 md:px-5 border-2 rounded-3xl z-10 text-white text-xs lg:text-base'>
           <HashLink smooth to="#plus">{t('headerButton')}</HashLink>
-        </motion.div>
+        </motion.button>
       </div>
       <span className='relative -top-10' id="plus"></span>
     </header>
