@@ -4,8 +4,10 @@ import { useRef } from 'react'
 import { setboolFooter } from '../Features/bookingSlice';
 import { useDispatch, useSelector } from 'react-redux'
 import BookTable from './Booking/BookTable';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const [t, i18n] = useTranslation()
   const footer = useRef(null)
   const isInView = useInView(footer, { once: true });
   const booking = useSelector((state) => state.booking.boolFooter);
@@ -34,7 +36,7 @@ export default function Footer() {
             transition: { duration: 0.01 }
           }}
           whileTap={{ scale: 0.9, transition: { duration: 0.001 }}}
-          onClick={() => { dispatch(setboolFooter()) }} className='uppercase bg-orange py-2 w-24 sm:w-32 text-center rounded-xl text-white font-bold text-xs md:text-sm cursor-pointer'>book a table</motion.button>
+          onClick={() => { dispatch(setboolFooter()) }} className='uppercase bg-orange py-2 w-28 sm:w-32 text-center rounded-xl text-white font-bold text-xs md:text-sm cursor-pointer'>{t('booking')}</motion.button>
           <span className='font-battam font-bold text-sm md:text-base px-3 py-2'>Open seven days a week</span>
         </div>
         <div className='flex flex-col-reverse md:flex-col justify-center items-center'>
