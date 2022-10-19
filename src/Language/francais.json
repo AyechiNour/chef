@@ -16,5 +16,62 @@
     "headerTitleMenu":"Delicious and Healthy",
     "headerParagraphMenu":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cum placeat laboriosam aut ipsa provident accusantium non fugiat, animi impedit!",
     "headerTitleContact":"Always On Call",
-    "headerParagraphContact":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cum placeat laboriosam aut ipsa provident accusantium non fugiat, animi impedit!"
+    "headerParagraphContact":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cum placeat laboriosam aut ipsa provident accusantium non fugiat, animi impedit!",
+
+    "welcome":{
+        "part1":"Bienvenue",
+        "part2":"Bien Manger"
+    },
+    "story":{
+        "part1":"Notre",
+        "part2":"Histoire"
+    },
+    "bestChef":{
+        "part1":"Meilleurs",
+        "part2":"Cuisiniers"
+    },
+    "menu":{
+        "part1":"Notre",
+        "part2":"Menu"
+    },
+    "contact":{
+        "part1":"Notre",
+        "part2":"Contact"
+    },
+    "offer":{
+        "part1":"Nos",
+        "part2":"Offres"
+    },
+    "archi":{
+        "part1":"Notre",
+        "part2":"Architecture"
+    },
+    "gallery":{
+        "part1":"Notre",
+        "part2":"Gallerie"
+    },
+    "team":{
+        "part1":"Notre",
+        "part2":"Groupe"
+    },
+    "chef":{
+        "part1":"Nos",
+        "part2":"Chefs"
+    },
+    "bestSeller":{
+        "part1":"Best",
+        "part2":"Seller"
+    },
+    "contactUs":{
+        "part1":"Contactez",
+        "part2":"Nous"
+    },
+    "findUs":{
+        "part1":"Trouvez",
+        "part2":"Nous"
+    },
+    "bookTable":{
+        "part1":"Reservez",
+        "part2":"Une Table"
+    }
 }

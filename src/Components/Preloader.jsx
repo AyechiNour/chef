@@ -18,7 +18,7 @@ const Preloader = () => {
         <>
             {apparence &&
                 <div className={animation ? 'z-50 fixed h-screen w-screen flex justify-center items-center bg-white' : 'z-50 fixed h-screen w-screen flex justify-center items-center bg-white animate'}>
-                    <img src="/images/ChefGif.gif" alt="" srcset="" />
+                    <img src="/images/ChefGif.gif" alt="" srcSet="" />
                 </div>
             }
         </>

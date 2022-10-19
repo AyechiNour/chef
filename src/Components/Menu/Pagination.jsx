@@ -26,7 +26,6 @@ export function Pagination({ itemsPerPage }) {
         dispatch(filterPlat())
     }, [dispatch, option]);
     // We start with an empty list of items.
-    const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
     // Here we use item offsets; we could also use page offsets
     // following the API or data you're working with.
@@ -34,11 +33,6 @@ export function Pagination({ itemsPerPage }) {
     useEffect(() => {
         // Fetch items from another resources.    
         setendOffset(itemOffset + itemsPerPage)
-        setCurrentItems(platFilter.map((data) => {
-            return (
-                <PlatCard plat={data} />
-            )
-        }).slice(itemOffset, endOffset));
         setPageCount(Math.ceil(platFilter.map((data) => {
             return (
                 <PlatCard plat={data} />
@@ -74,7 +68,7 @@ export function Pagination({ itemsPerPage }) {
                 containerClassName="pageContainer"
                 previousClassName="previousBoutton"
                 nextClassName="nextBoutton"
-                activeClassName="activePage"
+                activeclassname="activePage"
                 forcePage={0}
             />
         </div>

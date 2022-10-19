@@ -1,19 +1,21 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Boutton from '../Boutton'
+import Button from '../Button'
 import Caroussel from '../Caroussel'
 import Dish from '../Dish'
-import LeftBouttonWhite from '../LeftBouttonWhite'
-import RightBouttonWhite from '../RightBouttonWhite'
+import LeftButtonWhite from '../LeftButtonWhite'
+import RightButtonWhite from '../RightButtonWhite'
 import Title from '../Title'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { topTenPlats } from '../../Features/platSlice'
+import { useTranslation } from 'react-i18next'
 
 export default function Menu() {
+    const [t, i18n] = useTranslation()
     const title = {
-        part1: "Our",
-        part2: "Menu",
+        part1: t('menu.part1'),
+        part2: t('menu.part2'),
         color: "#FFFFFF"
     }
     const dispatch = useDispatch()
@@ -44,10 +46,10 @@ export default function Menu() {
         <div className="realtive bg-im mt-8 pb-8" >
             <Title title={title} />
             <div className='mt-4'>
-                <Caroussel items={dishes} responsive={responsive} rightBouttom={<RightBouttonWhite />} leftBouttom={<LeftBouttonWhite />} />
+                <Caroussel items={dishes} responsive={responsive} rightBouttom={<RightButtonWhite />} leftBouttom={<LeftButtonWhite />} />
             </div>
             <NavLink className='flex justify-center items-center' to="/Menu">
-                <Boutton bgColor="#FFFFFF" textColor="#000000" flecheIm="/images/fleche_black.png" />
+                <Button bgColor="#FFFFFF" textColor="#000000" flecheIm="/images/fleche_black.png" />
             </NavLink>
         </div>
     )

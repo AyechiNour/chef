@@ -23,6 +23,11 @@ export default function Header({ headerInfo }) {
           initial={{ y: -50 }}
           animate={{ y: 0 }}
           transition={{ duration: 1 }}
+          whileHover={{
+            opacity: 0.9,
+            transition: { duration: 0.01 }
+          }}
+          whileTap={{ scale: 0.9, transition: { duration: 0.001 }}}
           className='cursor-pointer font-capriola py-1 mb-20 sm:mb-12 md:mb-10 md:py-2 px-3 md:px-5 border-2 rounded-3xl z-10 text-white text-xs lg:text-base'>
           <HashLink smooth to="#plus">{t('headerButton')}</HashLink>
         </motion.button>

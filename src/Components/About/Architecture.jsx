@@ -1,14 +1,16 @@
 import React from 'react';
 import ArchitectureCard from './ArchitectureCard'
 import Title from '../Title'
-import RightBouttonBlack from '../RightBouttonBlack';
-import LeftBouttonBlack from '../LeftBouttonBlack';
+import RightButtonBlack from '../RightButtonBlack';
+import LeftButtonBlack from '../LeftButtonBlack';
 import Caroussel from '../Caroussel';
+import { useTranslation } from 'react-i18next';
 
 const Architecture = () => {
+    const [t, i18n] = useTranslation()
     const title = {
-        part1: "Our",
-        part2: "Architecture"
+        part1: t('archi.part1'),
+        part2: t('archi.part2')
     }
     const archiInfo = [
         {
@@ -46,7 +48,7 @@ const Architecture = () => {
         <section>
             <Title title={title} />
             <div className='mt-4'>
-                <Caroussel items={architecture} responsive={responsive} rightBouttom={<RightBouttonBlack />} leftBouttom={<LeftBouttonBlack />} />
+                <Caroussel items={architecture} responsive={responsive} rightBouttom={<RightButtonBlack />} leftBouttom={<LeftButtonBlack />} />
             </div>
         </section>
     );

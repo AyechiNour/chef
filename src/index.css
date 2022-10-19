@@ -104,7 +104,7 @@ textarea {
         position: relative;
         text-align: right;
         width: 100%;
-        height: calc(25rem);
+        /* height: calc(25rem); */
     }
 
     .gmap_canvas {
@@ -121,10 +121,10 @@ textarea {
     }
 
     .mapouter {
-        position: relative;
+        /* position: relative; */
         text-align: right;
         width: 100%;
-        height: calc(15rem);
+        /* height: calc(15rem); */
     }
 
     .gmap_canvas {
@@ -150,7 +150,7 @@ textarea {
     position: relative;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 
 .previousBoutton {

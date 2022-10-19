@@ -2,11 +2,13 @@ import React from 'react';
 import Title from '../Title';
 import { motion, useInView } from "framer-motion"
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Team = () => {
+    const [t] = useTranslation()
     const title = {
-        part1: "Our",
-        part2: "Team"
+        part1: t('team.part1'),
+        part2: t('team.part2')
     }
     const img = useRef(null)
     const texte = useRef(null)
@@ -23,7 +25,7 @@ const Team = () => {
                         opacity: isInView1 ? 1 : 0,
                         transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                     }}
-                    className='lg:w-1/2 px-10 xl:px-24 py-4' src="/images/team.png" alt="" srcset="" />
+                    className='lg:w-1/2 px-10 xl:px-24 py-4' src="/images/team.png" alt="" srcSet="" />
                 <div className='lg:w-1/2 flex justify-center items-center'>
                     <motion.p
                         style={{

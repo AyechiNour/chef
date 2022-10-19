@@ -16,5 +16,62 @@
     "headerTitleMenu":"Delicious and Healthy",
     "headerParagraphMenu":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cum placeat laboriosam aut ipsa provident accusantium non fugiat, animi impedit!",
     "headerTitleContact":"Always On Call",
-    "headerParagraphContact":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cum placeat laboriosam aut ipsa provident accusantium non fugiat, animi impedit!"    
+    "headerParagraphContact":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus cum placeat laboriosam aut ipsa provident accusantium non fugiat, animi impedit!",    
+
+    "welcome":{
+        "part1":"Welcome",
+        "part2":"Eating Well"
+    },
+    "story":{
+        "part1":"Our",
+        "part2":"Story"
+    },
+    "bestChef":{
+        "part1":"Best",
+        "part2":"Chefs"
+    },
+    "menu":{
+        "part1":"Our",
+        "part2":"Menu"
+    },
+    "contact":{
+        "part1":"Our",
+        "part2":"Contact"
+    },
+    "offer":{
+        "part1":"Our",
+        "part2":"Offer"
+    },
+    "archi":{
+        "part1":"Our",
+        "part2":"Architecture"
+    },
+    "gallery":{
+        "part1":"Our",
+        "part2":"Gallery"
+    },
+    "team":{
+        "part1":"Our",
+        "part2":"Team"
+    },
+    "chef":{
+        "part1":"Our",
+        "part2":"Chefs"
+    },
+    "bestSeller":{
+        "part1":"Best",
+        "part2":"Seller"
+    },
+    "contactUs":{
+        "part1":"Contact",
+        "part2":"Us"
+    },
+    "findUs":{
+        "part1":"Find",
+        "part2":"Us"
+    },
+    "bookTable":{
+        "part1":"Book",
+        "part2":"A Table"
+    }
 }

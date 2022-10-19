@@ -2,17 +2,18 @@ import React from 'react';
 import Title from '../Title';
 import { motion, useInView } from "framer-motion"
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const BestOffer = () => {
+    const [t] = useTranslation()
     const title = {
-        part1: "Our",
-        part2: "Offer",
+        part1: t('offer.part1'),
+        part2: t('offer.part2'),
         color: "#FFFFFF"
     }
     const offre = useRef(null)
     const img = useRef(null)
     const isInView1 = useInView(offre, { once: true });
-    const isInView2 = useInView(img, { once: true });
     return (
         <div className='bg-offer'>
             <Title title={title} />
@@ -43,7 +44,7 @@ const BestOffer = () => {
                         opacity: isInView1 ? 1 : 0,
                         transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                     }}
-                    className='px-16 sm:px-6 md:px-10 xl:px-24 py-10 sm:w-1/2' src="/images/Humburger.png" alt="" srcset="" />
+                    className='px-16 sm:px-6 md:px-10 xl:px-24 py-10 sm:w-1/2' src="/images/Humburger.png" alt="" srcSet="" />
             </div>
         </div>
     );

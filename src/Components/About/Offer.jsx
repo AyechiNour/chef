@@ -1,11 +1,13 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import Title from '../Title'
 import OfferCard from './OfferCard'
 
 export default function Offer() {
+    const [t, i18n] = useTranslation()
     const title = {
-        part1: "Our",
-        part2: "Offers"
+        part1: t('offer.part1'),
+        part2: t('offer.part2')
     }
     const offersInfo = [
         {

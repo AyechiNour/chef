@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import ContactInfo from '../Components/Contact.jsx/ContactInfo'
-import Find from '../Components/Contact.jsx/Find'
+import ContactInfo from '../Components/Contact/ContactInfo'
+import Find from '../Components/Contact/Find'
 import Header from '../Components/Header'
 import { useTranslation } from "react-i18next";
 
 export default function Contact() {
-  const [t, i18n] = useTranslation()
+  const [t] = useTranslation()
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -18,7 +18,7 @@ export default function Contact() {
     <main>
       <Header headerInfo={headerInfo} />
       <ContactInfo />
-      <Find />
+      <Find /> 
     </main>
   )
 }

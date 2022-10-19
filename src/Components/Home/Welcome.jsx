@@ -1,11 +1,13 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import Title from '../Title'
 import Option from './Option'
 
 export default function Welcome() {
+  const [t, i18n] = useTranslation()
   const title = {
-    part1: "Welcome",
-    part2: "Eating Well"
+    part1: t('welcome.part1'),
+    part2: t('welcome.part2')
   }
   const info = [
     {

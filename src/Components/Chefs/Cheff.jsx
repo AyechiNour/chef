@@ -1,19 +1,21 @@
 import React from 'react';
 import Caroussel from '../Caroussel';
 import Chef from '../Chef';
-import LeftBouttonBlack from '../LeftBouttonBlack';
-import RightBouttonBlack from '../RightBouttonBlack';
+import LeftButtonBlack from '../LeftButtonBlack';
+import RightButtonBlack from '../RightButtonBlack';
 import Title from '../Title';
 import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next';
 const Cheff = () => {
+    const [t] = useTranslation()
     const title = {
-        part1: "Our",
-        part2: "Chefs"
+        part1: t('chef.part1'),
+        part2: t('chef.part2')
     }
     const chefsInfo = useSelector((state) => state.chefs.chefsInfo)
-    const chefs = chefsInfo.map((data) => {
+    const chefs = chefsInfo.map((data,key) => {
         return (
-            <Chef chef={data} />
+            <Chef chef={data} id={key}  />
         )
     })
     const responsive = {
@@ -34,7 +36,7 @@ const Cheff = () => {
         <div>
             <Title title={title} />
             <div>
-                <Caroussel items={chefs} responsive={responsive} rightBouttom={<RightBouttonBlack />} leftBouttom={<LeftBouttonBlack />} />
+                <Caroussel items={chefs} responsive={responsive} rightBouttom={<RightButtonBlack />} leftBouttom={<LeftButtonBlack />} />
             </div>
         </div>
     );

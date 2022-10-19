@@ -24,19 +24,25 @@ export default function Footer() {
         }}
         className='grid grid-cols-1 md:grid-cols-3 justify-center'>
         <div className='flex flex-col justify-center items-center'>
-          <img className='w-32 h-32' src="/images/logoFooter.png" alt="" srcset="" />
+          <img className='w-32 h-32' src="/images/logoFooter.png" alt="" srcSet="" />
           <span className='px-2 font-jim text-xl sm:text-2xl lg:text-3xl font-normal'>The Chef</span>
         </div>
         <div className='flex flex-col justify-center items-center relative top-5 mb-8'>
-          <button onClick={() => { dispatch(setboolFooter()) }} className='uppercase bg-orange py-2 w-24 sm:w-32 text-center rounded-xl text-white font-bold text-xs md:text-sm cursor-pointer'>book a table</button>
+          <motion.button 
+          whileHover={{
+            opacity: 0.9,
+            transition: { duration: 0.01 }
+          }}
+          whileTap={{ scale: 0.9, transition: { duration: 0.001 }}}
+          onClick={() => { dispatch(setboolFooter()) }} className='uppercase bg-orange py-2 w-24 sm:w-32 text-center rounded-xl text-white font-bold text-xs md:text-sm cursor-pointer'>book a table</motion.button>
           <span className='font-battam font-bold text-sm md:text-base px-3 py-2'>Open seven days a week</span>
         </div>
         <div className='flex flex-col-reverse md:flex-col justify-center items-center'>
           <span className='font-battam font-bold text-sm md:text-base px-3 py-2'>Stay Connected</span>
           <div className='flex flex-row'>
-            <img className='w-10 h-10 cursor-pointer' src="/images/facebook.png" alt="" srcset="" />
-            <img className='w-10 h-10 cursor-pointer' src="/images/insta.png" alt="" srcset="" />
-            <img className='w-10 h-10 cursor-pointer' src="/images/twitter.png" alt="" srcset="" />
+            <img className='w-10 h-10 cursor-pointer' src="/images/facebook.png" alt="" srcSet="" />
+            <img className='w-10 h-10 cursor-pointer' src="/images/insta.png" alt="" srcSet="" />
+            <img className='w-10 h-10 cursor-pointer' src="/images/twitter.png" alt="" srcSet="" />
           </div>
         </div>
       </motion.div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import Title from '../Title';
 import Dish from '../Dish'
-import RightBouttonBlack from '../RightBouttonBlack';
-import LeftBouttonBlack from '../LeftBouttonBlack';
+import RightButtonBlack from '../RightButtonBlack';
+import LeftButtonBlack from '../LeftButtonBlack';
 import Caroussel from '../Caroussel';
 import { useSelector } from 'react-redux'
 
@@ -36,7 +36,7 @@ const BestSeller = () => {
     return (
         <div>
             <Title title={title} />
-            <Caroussel items={bestSellers} responsive={responsive} rightBouttom={<RightBouttonBlack />} leftBouttom={<LeftBouttonBlack />} />
+            <Caroussel items={bestSellers} responsive={responsive} rightBouttom={<RightButtonBlack />} leftBouttom={<LeftButtonBlack />} />
         </div>
     );
 }
